@@ -4,6 +4,10 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  daisyui: {
+    themes: ["light", "dark", "lemonade"],
+  },
+  // eslint-disable-next-line no-undef
+  plugins: [require("daisyui")],
 }
 
