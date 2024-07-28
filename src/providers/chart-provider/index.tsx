@@ -6,9 +6,20 @@ import { ISeriesList } from '../../types/ChartData'
 
 type IChartStore = IChartState & IChartActions
 
+const defaultSeries = [
+  {
+    label: 'Series 1',
+    data: [
+      { primary: '2020-01-01', secondary: 10 },
+      { primary: '2020-01-02', secondary: 20 },
+      { primary: '2020-01-03', secondary: 30 },
+    ],
+  }
+]
+
 const createChartStore = () =>
   createStore<IChartStore>()((set) => ({
-    series: [],
+    series: defaultSeries,
     setSeries: (series: ISeriesList) => set(() => ({ series })),
     numSeries: 10,
     setNumSeries: (numSeries: number) => set(() => ({ numSeries })),

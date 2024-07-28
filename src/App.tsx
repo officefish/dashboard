@@ -11,6 +11,7 @@ import { ChartProvider } from './providers/chart-provider'
 
 function App() {
   //const [count, setCount] = useState(0)
+  console.log("App")
 
   return (
     <ChartProvider>
@@ -18,6 +19,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Dashboard />}/>
+            <Route path="/dashboard" element={<Dashboard />}/>
             <Route path="/settings" element={<Settings />}/>
           </Routes>
         </Router>
