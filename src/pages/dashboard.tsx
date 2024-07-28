@@ -1,12 +1,29 @@
-import { FC, ReactNode } from "react"
+import { FC, ReactNode, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Chart from "../components/chart"
+import { getStatistics } from "../services/network/axios.service";
 
 interface IDashboard {}
 
 const Dashboard: FC<IDashboard> = (/*props*/) : ReactNode => {
 
    //const {} = props
+   useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await getStatistics();
+            console.log(response)
+            //setData(response.data);
+        } catch (err) {
+            //setError(err.message);
+        } finally {
+            //setLoading(false);
+        }
+    };
+
+    fetchData();
+}, []);
+
 
   return (
     <div className="w-full">
